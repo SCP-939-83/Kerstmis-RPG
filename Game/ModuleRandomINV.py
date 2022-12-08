@@ -1,19 +1,3 @@
-
-# import random
-# cars = ["stone"]
-# print(cars)
-# for i in range(int(input("hoeveel sticks wil je?"))):
-#     cars.append("stick")
-# y = cars.count("stick")
-# print(y, "sticks")
-# x = cars[0]
-# x = len(cars)
-# for i in range (1):
-#     print(cars)
-# x = cars.index("stick")
-# z = len(cars)
-# print("je hebt",z , "items")
-
 import random
 inventory = []
 def itemgen():
