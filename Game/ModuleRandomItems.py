@@ -10,7 +10,16 @@ HetGameBoekje
 
 
 
-cars = ["stick", "stone", "leaf"]
+
+
+
+
+cars = ["stone"]
+print(cars)
+for i in range(int(input("hoeveel sticks wil je?"))):
+    cars.append("stick")
+y = cars.count("stick")
+print(y, "sticks")
 x = cars[0]
 cars[0] = "stick"
 cars[1] = "stone"
