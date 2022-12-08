@@ -1,3 +1,8 @@
+import colour
+import random
+
+
+
 print("Hello player, welcome to the game!")
 name = input("What is your name? ")
 print("Hello " + name + ", let's start the game!")
