@@ -40,8 +40,21 @@ def itemgen():
     print("\033[1;0m Je hebt een" + loot + "\033[1;0mitem gekregen!!")
     return inventory
 
-for i in range(int(input("hoeveel sticks wil je?"))):
+
+while True:
+    try:
+        integer = int(input("Hoeveel items wil je hebben?: "))
+    except ValueError:
+        print("Vul een getal in, geen letters of tekens!")
+        continue
+    else:
+        print(f'Je vulde dit getal in: {integer}')
+        break
+
+for i in range(integer):
     itemgen()
+
+
 stick = inventory.count("stick") 
 rock = inventory.count("rock")
 potato = inventory.count("potato")
