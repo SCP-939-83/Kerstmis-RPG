@@ -31,3 +31,6 @@ for i in range(attack):
     print(hp, "hp")
     print(dmg, "dmg")
     print("------------------")
+    # implentatie van een if statement die zegt dat als hp <= 0 je hebt gewonnen en de code stopt dan, geeft gebruiker 5 gold en 3 xp
+    # if hp <= 0:
+    #     print("You won and defeated monster!")
