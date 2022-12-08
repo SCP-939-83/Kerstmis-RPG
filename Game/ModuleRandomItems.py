@@ -10,11 +10,17 @@ HetGameBoekje
 
 
 
-cars = ["Ford", "Volvo", "BMW"]
+cars = ["stick", "stone", "leaf"]
 x = cars[0]
-cars[0] = "Toyota"
+cars[0] = "stick"
+cars[1] = "stone"
+cars[2] = "leaf"
 x = len(cars)
 print(cars[0])
+print(cars[1])
+print(cars[2])
+x = cars.index("stick")
+print(x)
 # rarity = random.randint(1, 1000)
 
 # if rarity >= 1 and rarity <= 5: loot = ("\033[1;31m mythical ")
