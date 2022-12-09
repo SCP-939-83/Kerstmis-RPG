@@ -7,13 +7,13 @@ def level_up(level: int, xp: int, xp_level: int) -> int:
 
     xp -= xp_level
 
-    xp_level = int(xp_level * 1.000000000000000000000000005)
+    xp_level = int(xp_level * 2)
  
   return level, xp, xp_level
 
 
 level = 1
-xp = 1100000000000
+xp = 11000000
 xp_level = 100
 combat = 1
 while combat == 1:
