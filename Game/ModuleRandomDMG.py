@@ -18,9 +18,10 @@ def random_dmg():
     if dmg >=1:
         print("You hit!")
         hp = hp - dmg
+        return hp, dmg
     else:
         print("You missed!")
-    return hp, dmg
+    
     
 
 for i in range(attack):

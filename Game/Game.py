@@ -1,6 +1,7 @@
 import colour
 import random
 
+import ModuleLocation
 
 
 print("Hello player, welcome to the game!")
@@ -16,6 +17,7 @@ while True:
         print("What do you do?")
         print("1. Fight the monster")
         print("2. Run away")
+        ModuleLocation.locationVillage()
         fight = input("Type 1 or 2: ")
         if fight == "1":
             print("You fought the monster and won!")
