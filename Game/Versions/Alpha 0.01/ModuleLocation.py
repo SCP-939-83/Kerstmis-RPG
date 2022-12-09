@@ -66,8 +66,8 @@ def startGame():
     else:
         print("Invalid input! Game closes!")
         exit()
-
-startGame()
-print (location)
-input("Press enter to continue...")
+if __name__ == "__main__":
+    startGame()
+    print (location)
+    input("Press enter to continue...")
 

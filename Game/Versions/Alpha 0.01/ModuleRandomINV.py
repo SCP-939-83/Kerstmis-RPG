@@ -24,41 +24,41 @@ def itemgen():
     print("\033[1;0m Je hebt een" + loot + "\033[1;0mitem gekregen!!")
     return inventory
 
+if __name__ == "__main__":
+    while True:
+        try:
+            integer = int(input("Hoeveel items wil je hebben?: "))
+        except ValueError:
+            print("Vul een getal in, geen letters of tekens!")
+            continue
+        else:
+            print(f'Je vulde dit getal in: {integer}')
+            break
 
-while True:
-    try:
-        integer = int(input("Hoeveel items wil je hebben?: "))
-    except ValueError:
-        print("Vul een getal in, geen letters of tekens!")
-        continue
-    else:
-        print(f'Je vulde dit getal in: {integer}')
-        break
-
-for i in range(integer):
-    itemgen()
+    for i in range(integer):
+        itemgen()
 
 
-stick = inventory.count("stick") 
-rock = inventory.count("rock")
-potato = inventory.count("potato")
-flower = inventory.count("flower")
-mushroom = inventory.count("mushroom")
-apple = inventory.count("apple")
+    stick = inventory.count("stick") 
+    rock = inventory.count("rock")
+    potato = inventory.count("potato")
+    flower = inventory.count("flower")
+    mushroom = inventory.count("mushroom")
+    apple = inventory.count("apple")
 
-y = len(inventory)
-print(stick, "sticks")
-print(rock, "rocks")
-print(potato, "potatoes")
-print(flower, "flowers")
-print(mushroom, "mushrooms")
-print(apple, "apples")
-print(y, "total items")
-print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-inventory.sort()
-inventory.reverse()
-print(inventory)
+    y = len(inventory)
+    print(stick, "sticks")
+    print(rock, "rocks")
+    print(potato, "potatoes")
+    print(flower, "flowers")
+    print(mushroom, "mushrooms")
+    print(apple, "apples")
+    print(y, "total items")
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+    inventory.sort()
+    inventory.reverse()
+    print(inventory)
 
-# z = random.randint(1, 1000)
-# if z >= 1 and z <= 1000: loot = ("\033[1;31m mythical ")
+    # z = random.randint(1, 1000)
+    # if z >= 1 and z <= 1000: loot = ("\033[1;31m mythical ")
 
