@@ -5,6 +5,7 @@ attacks = 0
 hpUser = 20
 maxAttackDamage = 10
 attackAmount = 0
+monsterHeal = 0
 # fuctions
 
 #option to attack, heal or run
@@ -37,7 +38,7 @@ def option():
             print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
             print("placeholder text for healing use item here")
             print("you have ", hpUser, "hp")
-            hpUser = hpUser + random.randint(3,6)
+            hpUser = hpUser + random.randint(5,10)
             print("you have healed up to ", hpUser, "hp")
             monsterAttack()
             # monster has a chance to attack or heal it self with random int, and if int is 1-3 it heals, if 4-10 it strikes back

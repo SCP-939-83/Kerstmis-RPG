@@ -24,6 +24,30 @@ def itemgen():
     print("\033[1;0m Je hebt een" + loot + "\033[1;0mitem gekregen!!")
     return inventory
 
+def inventoryshow():
+    
+    stick = inventory.count("stick") 
+    rock = inventory.count("rock")
+    potato = inventory.count("potato")
+    flower = inventory.count("flower")
+    mushroom = inventory.count("mushroom")
+    apple = inventory.count("apple")
+
+    y = len(inventory)
+    print(stick, "sticks")
+    print(rock, "rocks")
+    print(potato, "potatoes")
+    print(flower, "flowers")
+    print(mushroom, "mushrooms")
+    print(apple, "apples")
+    print(y, "total items")
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+    inventory.sort()
+    inventory.reverse()
+    print(inventory)
+
+
+
 if __name__ == "__main__":
     # Geen while true maar duidelijk zijn
     while True:
