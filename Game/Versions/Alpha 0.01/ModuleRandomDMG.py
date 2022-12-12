@@ -19,7 +19,7 @@ def random_dmg():
         print("You did", dmg, "dmg")
         hp = hp - dmg
         print("Now , the monster has", hp, "hp")
-        return hp, dmg
+        return hp
     else:
         print("You missed!")
     

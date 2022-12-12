@@ -1,4 +1,4 @@
-#player is at village and has to go to the forest
+# player is at village and has to go to the forest
 
 def locationVillage():
     global location
@@ -15,7 +15,6 @@ def locationVillage():
     else:
         print("Invalid input! Game closes!")
         exit()
-
 
 
 def locationForest():
@@ -51,10 +50,12 @@ def locationMountain():
         print("Invalid input! Game closes!")
         exit()
 
+
 def startGame():
     global location
     print("Hello player, welcome to the game!")
-    location = input("Do you want to go to the village, forest or mountain? (V/F/M): ")
+    location = input(
+        "Do you want to go to the village, forest or mountain? (V/F/M): ")
     if location == "V":
         locationVillage()
     elif location == "F":
@@ -66,8 +67,9 @@ def startGame():
     else:
         print("Invalid input! Game closes!")
         exit()
+
+
 if __name__ == "__main__":
     startGame()
-    print (location)
+    print(location)
     input("Press enter to continue...")
-

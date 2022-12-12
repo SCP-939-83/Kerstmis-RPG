@@ -25,6 +25,7 @@ def itemgen():
     return inventory
 
 if __name__ == "__main__":
+    # Geen while true maar duidelijk zijn
     while True:
         try:
             integer = int(input("Hoeveel items wil je hebben?: "))
