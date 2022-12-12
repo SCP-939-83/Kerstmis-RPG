@@ -19,12 +19,22 @@ def stats():
   fire = 10
   while level >= new_level:
     new_level = int(new_level + 1)
-    player = (player * 1.1)
-    armor = (armor * 1.1)
-    damage = (damage * 1.1)
-    poison = (poison * 1.1)
-    fire = (fire * 1.1)
-  return player, new_level, armor, fire, damage, poison
+    print("Health points(HP), Armor(A), Damage(D), Poison(P), Fire(F)")
+    keuze = input('Wat is je keuze? ')  
+    if keuze == ("HP"):
+        player = (player * 1.1)
+    elif keuze == ("A"):
+        armor = (armor * 1.1)
+    elif keuze == ("D"):
+        damage = (damage * 1.1)
+    elif keuze == ("P"):
+        poison = (poison * 1.1)
+    elif keuze == ("F"):
+        fire = (fire * 1.1)
+        return player, new_level, armor, damage, poison, fire, keuze
+    
+
+
 
 level = 1
 xp = 11000000
@@ -32,7 +42,7 @@ xp_level = 100
 
 while xp >= xp_level:
   level, xp, xp_level = level_up(level, xp, xp_level)
-  player, new_level, armor, damage, poison, fire = stats()
+  player, new_level, armor, damage, poison, fire, keuze = stats()
   print(f"Player's level:", level)
   print(f"Player's current XP:", xp)
   print(f"Player's XP needed to reach the next level:", xp_level)
