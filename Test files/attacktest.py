@@ -18,6 +18,9 @@ def option():
     if hpMonster <= 1:
         print("You have won. You attacked", attacks, "times")
         pass
+    elif hpUser <= 1:
+        print("You have died")
+        exit()
     else :
         optionq = input("What do you want to do?")
         print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
