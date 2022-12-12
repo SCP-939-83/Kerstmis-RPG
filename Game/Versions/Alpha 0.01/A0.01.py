@@ -8,4 +8,5 @@ import ModuleLocation
 import ModuleRandomINV
 
 ModuleLocation.startGame()
-ModuleRandomDMG.random_dmg()
+if input("Do you want to fight a monster? (Y/N): ") == "Y":
+    ModuleRandomDMG.random_dmg()
