@@ -40,10 +40,13 @@ def attackUser():
     global attacks
     global maxAttack
     attackPlayer = random.randint(-1, maxAttack)
+    print(attackPlayer)
+    hpMonster = hpMonster - attackPlayer
+    hpUser = hpUser - 3
 
 # When player interacts, the monster attacks
     # if hpuser <= 0:player dies
     # if hpmonster <= 0:player wins
 
 if __name__ == "__main__":
-    option()
+    attackUser()
