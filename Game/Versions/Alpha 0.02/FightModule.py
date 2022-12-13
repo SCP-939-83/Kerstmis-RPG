@@ -28,7 +28,7 @@ def option():
         optionq = optionq.lower()
         if optionq == "attack":
             print("attack")
-            attacks = attacks + 1
+            attacks += 1
             attackUser()
             option()
         elif optionq == "run":
@@ -86,7 +86,7 @@ def monsterAttack():
     global hpUser
     global monsterHeal
     monsterHeal = random.randint(4,10)
-    monsterAttackHeal = random.randint(1,10)
+    monsterAttackHeal = random.randint(1,6)
     if monsterAttackHeal <= 3:
         print("Opponent healed ", monsterHeal, " hp. The opponenet has ", hpMonster, "hp")
     else:
