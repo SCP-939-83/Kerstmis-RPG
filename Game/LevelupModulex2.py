@@ -19,20 +19,6 @@ def stats():
   fire = 10
   while level >= new_level:
     new_level = int(new_level + 1)
-    print("Health points(HP), Armor(A), Damage(D), Poison(P), Fire(F)")
-    keuze = input('Wat is je keuze? ')  
-    if keuze == ("HP"):
-        player = (player * 1.1)
-    elif keuze == ("A"):
-        armor = (armor * 1.1)
-    elif keuze == ("D"):
-        damage = (damage * 1.1)
-    elif keuze == ("P"):
-        poison = (poison * 1.1)
-    elif keuze == ("F"):
-        fire = (fire * 1.1)
-        return player, new_level, armor, damage, poison, fire, keuze
-    
 
 
 
