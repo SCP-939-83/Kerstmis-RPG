@@ -1,5 +1,9 @@
 # player is at village and has to go to the forest
 
+import FightModule
+import ModuleRandomINV
+
+
 def locationVillage():
     global location
     print("You are at the village")
@@ -20,6 +24,10 @@ def locationVillage():
 def locationForest():
     global location
     print("You are in the forest")
+    FightModule.option()
+    if input("item?") == "yes":
+        print("placeholder text for item use")
+        ModuleRandomINV.itemgen()
     print("You can go to the village or the mountain")
     print("Which one do you choose?")
     location = input("Type V for village and M for mountain: ")
