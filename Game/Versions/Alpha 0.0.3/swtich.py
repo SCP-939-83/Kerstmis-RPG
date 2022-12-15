@@ -14,9 +14,12 @@ class Persoon:
     hp = 100
     def level_up(self):
         Persoon.level += self
-        Persoon.hp += 10
+        Persoon.hp += self*10
 
 
 print(Persoon.level)
 print(Persoon.hp)
-Persoon.level_up(4)
+Persoon.level_up(float(input("hoeveel level wil je levelen? ")))
+print("=====")
+print(Persoon.level)
+print(Persoon.hp)
