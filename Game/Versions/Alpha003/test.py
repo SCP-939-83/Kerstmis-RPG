@@ -55,4 +55,31 @@ def loadgame():
     # Print the contents of the dictionary
     print(data)
 
+def update():
+    my_dir = "Game\Versions\Alpha003"
+
+    # Use the os.makedirs() method to create the directory if it doesn't exist
+    os.makedirs(my_dir, exist_ok=True)
+
+    # Use the os.path.join() method to combine the directory and file name
+    file_path = os.path.join(my_dir, "my_file.json")
+
+    # Open the file for reading
+    with open(file_path, "r") as f:
+        # Load the JSON string from the file and convert it to a dictionary
+        data = json.load(f)
+
+
+    # Increase the value of the "age" field
+    data["age"] += 1
+
+    # Move the file pointer to the beginning of the file
+    f.seek(0)
+
+    # Write the updated dictionary to the file
+    json.dump(data, f)
+
+savegame()
+loadgame()
+update()
 loadgame()
