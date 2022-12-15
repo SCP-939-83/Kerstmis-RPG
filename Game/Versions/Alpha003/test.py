@@ -2,7 +2,12 @@ import json
 import os
 
 # Define a Python dictionary
+my_dir = "Game\Versions\Alpha003"
 
+    # Use the os.makedirs() method to create the directory if it doesn't exist
+os.makedirs(my_dir, exist_ok=True)
+# Use the os.path.join() method to combine the directory and file name
+file_path = os.path.join(my_dir, "my_file.json")
 
 class Person:
     def __init__(self, name, age, city):
@@ -53,6 +58,7 @@ def savegame():
 
 
 def loadgame():
+    global file_path
     my_dir = "Game\Versions\Alpha003"
 
     # Use the os.makedirs() method to create the directory if it doesn't exist
@@ -73,5 +79,19 @@ def loadgame():
     name = data["name"]
     city = data["city"]
     print(name, age , city, "Are you sure you want to load this game?")
+print(file_path)
 
-
+def playerfilecheck():
+    with open("Game\Versions\Alpha003\my_file.json", "r+") as f:
+        try:
+            json_data = json.load(f)
+            f.seek(0)
+            json.dump(json_data, f)
+            print("File is not empty!")
+            pass
+        except ValueError:
+            print("Empty File!")
+            playerfile()
+            savegame()
+playerfilecheck()
+loadgame()
