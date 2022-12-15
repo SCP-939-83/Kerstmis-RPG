@@ -13,9 +13,10 @@ class Person:
 
 def playerfile():
     global my_dict
-    Person.name = input("name:")
-    Person.age = int(input("age:"))
-    Person.city = input("city:")
+    global name, age, city
+    Person.name = name
+    Person.age = age
+    Person.city = city
     my_dict = {
         "name": Person.name,
         "age": Person.age,
@@ -67,16 +68,18 @@ def loadgame():
         data = json.load(f)
 
     # Print the contents of the dictionary
-    print(data["age"])
     global age , name , city
     age = data["age"]
     name = data["name"]
     city = data["city"]
-    print(name, age , city, "Are you sure you want to load this game?")
+    print("name = ",name)
+    print("age = ",age)
+    print("city = ",city)
+    print("loaded game successfully")
 
-
-for i in range(4):
-    loadgame()
-    playerfile()
-    savegame()  
-    
+if __name__ == "__main__":
+    for i in range(1):
+        loadgame()
+        playerfile()
+        savegame()  
+        
