@@ -3,24 +3,28 @@ import os
 
 # Define a Python dictionary
 
+
 class Person:
-  def __init__(self, name, age, city):
-    self.name = name
-    self.age = age
-    self.city = city
+    def __init__(self, name, age, city):
+        self.name = name
+        self.age = age
+        self.city = city
+
+
 def playerfile():
     global my_dict
     Person.name = input("name:")
     Person.age = int(input("age:"))
     Person.city = input("city:")
     my_dict = {
-    "name": Person.name,
-    "age": Person.age,
-    "city": Person.city
+        "name": Person.name,
+        "age": Person.age,
+        "city": Person.city
     }
     return my_dict
-playerfile()
 
+
+playerfile()
 
 
 def savegame():
@@ -66,7 +70,8 @@ def loadgame():
     # Print the contents of the dictionary
     print(data)
 
-playerfile()
-savegame()
-loadgame()
 
+for i in range(4):
+    playerfile()
+    savegame()
+    loadgame()
