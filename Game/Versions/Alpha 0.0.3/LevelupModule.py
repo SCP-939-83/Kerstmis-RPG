@@ -1,39 +1,64 @@
 
-def level_up(level: int, xp: int, xp_level: int) -> int:
-
-  if xp >= xp_level:
-
-    level += 1
-
-    xp -= xp_level
-
-    xp_level = int(xp_level * 2)
- 
-  return level, xp, xp_level
-
-
 level = 1
 xp = 0
-xp_level = 100
-combat = 1
+skill_points = 0
 
-if __name__ == "__main__":
-  while combat == 1:
-    level, xp, xp_level = level_up(level, xp, xp_level)
+skills = {
+  "HP": 0,
+  "Damage": 0,
+  "Armor": 0,
+  "Charisma": 0,
+  "Intelligence": 0
+}
 
+def level_up():
+  global level, skill_points, next_level_up_xp
 
-    print(f"Player's level: {level}")
-    print(f"Player's current XP: {xp}")
-    print(f"Player's XP needed to reach the next level: {xp_level}")
+  next_level_up_xp = 100 * (level+1)
+  
 
+  if xp >= next_level_up_xp:
 
-    player = 100
-    new_level = 1
-    if level >= new_level:
-      new_level = int(new_level + 1)
-      player = int(player * 1.1)
+    level += 1
+    skill_points += 1
 
-    print(player)
-    print(new_level)
-    if xp_level >= xp:
-      break
+    print(f"Congratulations! You are now level {level} and have {skill_points} skill points to spend.")
+  else:
+
+    print(f"You need {next_level_up_xp} experience points to reach level {level+1}.")
+
+def spend_skill_point():
+  global skill_points
+
+  if skill_points > 0:
+
+    print("Which skill do you want to level up?")
+    for skill in skills:
+      print(f"- {skill} (level {skills[skill]})")
+    skill = input("> ")
+    
+
+    if skill in skills:
+
+      skills[skill] += 1
+      skill_points -= 1
+
+      print(f"You have spent a skill point on {skill}. You have {skill_points} skill points remaining.")
+    else:
+
+      print(f"You don't have the skill {skill}.")
+  else:
+
+    print("You don't have enough skill points to spend.")
+old_xp = 100
+xp += 50
+level_up()
+print(next_level_up_xp)
+xp += 100
+level_up()
+spend_skill_point()
+print(next_level_up_xp)
+xp += 350
+level_up()
+spend_skill_point()
+print(next_level_up_xp)
