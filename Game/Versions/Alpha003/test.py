@@ -2,15 +2,30 @@ import json
 import os
 
 # Define a Python dictionary
-name = input("What is your name? ")
-age = int(input("How old are you? "))
-city = input("Where do you live? ")
-my_dict = {
-    "name": name,
-    "age": age,
-    "city": city
-}
 
+class Person:
+  def __init__(self, name, age, city):
+    self.name = name
+    self.age = age
+    self.city = city
+def playerfile():
+    global my_dict
+    Person.name = input("name:")
+    Person.age = int(input("age:"))
+    Person.city = input("city:")
+    my_dict = {
+    "name": Person.name,
+    "age": Person.age,
+    "city": Person.city
+    }
+    return my_dict
+playerfile()
+
+my_dict = {
+    "name": Person.name,
+    "age": Person.age,
+    "city": Person.city
+}
 
 def savegame():
     global data
@@ -55,4 +70,7 @@ def loadgame():
     # Print the contents of the dictionary
     print(data)
 
+playerfile()
+savegame()
 loadgame()
+
