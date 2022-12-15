@@ -27,7 +27,7 @@ my_dict = {
 }
 
 # Define the directory where the file should be saved
-my_dir = "C:\Users\Timo\GitHub\Kerstmis-RPG\Game\Versions\Alpha003"
+my_dir = "\GitHub\Kerstmis-RPG\Game\Versions\Alpha 0.0.3"
 
 # Use the os.path.join() method to combine the directory and file name
 file_path = os.path.join(my_dir, "my_file.json")
