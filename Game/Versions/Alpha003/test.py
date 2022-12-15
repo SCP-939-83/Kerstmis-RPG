@@ -75,8 +75,3 @@ def loadgame():
     print(name, age , city, "Are you sure you want to load this game?")
 
 
-for i in range(4):
-    loadgame()
-    playerfile()
-    savegame()  
-    
