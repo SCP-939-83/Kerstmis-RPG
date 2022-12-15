@@ -1,59 +1,28 @@
-# import json
-
-# # Define a Python dictionary
-# my_dict = {
-#     "name": "John Smith",
-#     "age": 35,
-#     "city": "New York"
-# }
-
-# # Open a file for writing
-# with open("my_file.json", "w") as f:
-#     # Write the JSON string to the file
-#     json.dump(my_dict, f)
-
-# for i in my_dict:
-#     print(my_dict[i])
-
-
 import json
 import os
 
 # Define a Python dictionary
+name = input("What is your name? ")
+age = int(input("How old are you? "))
+city = input("Where do you live? ")
 my_dict = {
-    "name": "John Smith",
-    "age": 35,
-    "city": "New York"
+    "name": name,
+    "age": age,
+    "city": city
 }
 
 # Define the directory where the file should be saved
-my_dir = "\GitHub\Kerstmis-RPG\Game\Versions\Alpha 0.0.3"
+my_dir = "Game\Versions\Alpha003"
+
+# Use the os.makedirs() method to create the directory if it doesn't exist
+os.makedirs(my_dir, exist_ok=True)
 
 # Use the os.path.join() method to combine the directory and file name
 file_path = os.path.join(my_dir, "my_file.json")
 
-# Open the file for writing
+# Open the file for writing, and write the JSON string to the file
 with open(file_path, "w") as f:
-    # Write the JSON string to the file
     json.dump(my_dict, f)
-
-# Define a Python dictionary
-my_file = {
-    "name": "John Smith",
-    "age": 35,
-    "city": "New York"
-}
-
-# Convert the dictionary to a JSON string
-json_string = json.dumps(my_file)
-
-# Print the JSON string
-print(json_string)
-
-# Open a file for writing
-with open("my_file.json", "w") as f:
-    # Write the JSON string to the file
-    json.dump(my_file, f)
 
 # Open the JSON file for reading and writing
 with open("my_file.json", "r+") as f:
@@ -68,5 +37,3 @@ with open("my_file.json", "r+") as f:
 
     # Write the updated dictionary to the file
     json.dump(data, f)
-
-print(json_string)
