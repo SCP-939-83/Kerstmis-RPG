@@ -24,7 +24,6 @@ def playerfile():
     return my_dict
 
 
-playerfile()
 
 
 def savegame():
@@ -68,10 +67,16 @@ def loadgame():
         data = json.load(f)
 
     # Print the contents of the dictionary
-    print(data)
+    print(data["age"])
+    global age , name , city
+    age = data["age"]
+    name = data["name"]
+    city = data["city"]
+    print(name, age , city, "Are you sure you want to load this game?")
 
 
 for i in range(4):
-    playerfile()
-    savegame()
     loadgame()
+    playerfile()
+    savegame()  
+    
