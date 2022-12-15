@@ -88,10 +88,10 @@ def playerfilecheck():
             f.seek(0)
             json.dump(json_data, f)
             print("File is not empty!")
+            
             pass
         except ValueError:
             print("Empty File!")
             playerfile()
             savegame()
-playerfilecheck()
-loadgame()
+            #set game level to 1 and start the game

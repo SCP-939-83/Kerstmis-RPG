@@ -1,8 +1,3 @@
-import FightModule
-# import LevelupModule
-# import ModuleRandomINV
-# import ModuleLocation
+import test
 
-print(FightModule.hpMonster)
-
-
+test.playerfilecheck()
