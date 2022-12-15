@@ -6,8 +6,10 @@ stats = {
     "charisma": 1,
     "armor": 1,
 }
+level = 1
+xp = 11000000
+xp_level = 1000
 def level_up(level: int, xp: int, xp_level: int) -> int:
-
   if xp >= xp_level:
 
     level += 1
@@ -17,9 +19,7 @@ def level_up(level: int, xp: int, xp_level: int) -> int:
     xp_level = int(xp_level * 2)
  
   return level, xp, xp_level
-level = 1
-xp = 11000000
-xp_level = 100
+
 
 def Levelup():
       new_level = 1
@@ -35,14 +35,16 @@ def Levelup():
 
             stats[stat_to_level_up] += 1
 
-
             print("Updated stats:")
             for stat, level in stats.items():
                 print(f"{stat}: {level}")
+                print (level)
+                print (new_level)
       else:
-
             print("Invalid stat name. Please try again.")
-            return new_level
+            return new_level, level 
+new_level = 1
+while level == new_level:
+  level_up(level, xp, xp_level)
+  Levelup()
 
-level_up(level, xp, xp_level)
-Levelup()
