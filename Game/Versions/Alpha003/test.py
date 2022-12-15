@@ -21,11 +21,7 @@ def playerfile():
     return my_dict
 playerfile()
 
-my_dict = {
-    "name": Person.name,
-    "age": Person.age,
-    "city": Person.city
-}
+
 
 def savegame():
     global data
