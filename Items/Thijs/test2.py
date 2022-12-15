@@ -12,7 +12,7 @@ skills = {
 }
 
 def level_up():
-  global level, skill_points
+  global level, skill_points, next_level_up_xp
 
   next_level_up_xp = 100 * (level+1)
   
@@ -50,12 +50,15 @@ def spend_skill_point():
   else:
 
     print("You don't have enough skill points to spend.")
-
+old_xp = 100
 xp += 50
 level_up()
+print(next_level_up_xp)
 xp += 100
 level_up()
 spend_skill_point()
+print(next_level_up_xp)
 xp += 350
 level_up()
 spend_skill_point()
+print(next_level_up_xp)
