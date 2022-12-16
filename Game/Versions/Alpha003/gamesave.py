@@ -6,6 +6,7 @@ os.makedirs(my_dir, exist_ok=True)
 file_path = os.path.join(my_dir, "my_file.json")
 
 class Person:
+    level = 1
     def __init__(self, name, age, city, level , xp):
         self.name = name
         self.age = age
@@ -35,13 +36,13 @@ def playerfile():
 
 
 def savegame():
-    global data , age , name , city , level , xp , data , file_path , my_dir
+    global data , age , name , city , level , xp , data , file_path , my_dir, my_dict
     my_dir = "Game\Versions\Alpha003"
     print("game saved")
 
     os.makedirs(my_dir, exist_ok=True)
 
-    file_path = os.path.join(my_dir, "my_file.json")
+    file_path = os.path.join(my_dict, "my_file.json")
 
     with open(file_path, "w") as f:
         json.dump(my_dict, f)
@@ -51,6 +52,8 @@ def savegame():
         f.seek(0)
 
         json.dump(data, f)
+    json_object = json.dumps(my_dict, indent = 4) 
+    print(json_object)
 
 
 def loadgame():
@@ -99,9 +102,8 @@ def playerfilecheck():
             
 
 if __name__ == "__main__":
-    playerfilecheck()
+    playerfilecheck ()
     Person.level += 1
-    print(Person.level, "level")
+    print(Person.level)
+    
     savegame()
-    print("hoi")
-    loadgame()
