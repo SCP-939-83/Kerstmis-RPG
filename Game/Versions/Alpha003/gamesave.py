@@ -15,7 +15,8 @@ class Person:
 
 
 def playerfile():
-    global my_dict
+    global age , name , city , level , xp , data , file_path , my_dir
+    global my_dict , name , age , city , level , xp
     Person.name = input("name:")
     Person.age = int(input("age:"))
     Person.city = input("city:")
@@ -28,14 +29,15 @@ def playerfile():
         "level" : Person.level,
         "xp" : Person.xp,
     }
-    return my_dict
+    return my_dict , Person.name , Person.age , Person.city , Person.level , Person.xp
 
 
 
 
 def savegame():
-    global data
+    global data , age , name , city , level , xp , data , file_path , my_dir
     my_dir = "Game\Versions\Alpha003"
+    print("game saved")
 
     os.makedirs(my_dir, exist_ok=True)
 
@@ -52,7 +54,7 @@ def savegame():
 
 
 def loadgame():
-    global file_path
+    global file_path , age , name , city , level , xp , data , file_path , my_dir
     my_dir = "Game\Versions\Alpha003"
 
     os.makedirs(my_dir, exist_ok=True)
@@ -68,11 +70,14 @@ def loadgame():
     name = data["name"]
     city = data["city"]
     level = data["level"]
+    xp = data["xp"]
     print(name, "= name")
     print(age, "= age")
     print(city, "= city")
     print(level, "= level")
-print(file_path)
+    return age , name , city , level , xp , data , file_path , my_dir
+
+
 
 def playerfilecheck():
     
@@ -95,3 +100,8 @@ def playerfilecheck():
 
 if __name__ == "__main__":
     playerfilecheck()
+    Person.level += 1
+    print(Person.level, "level")
+    savegame()
+    print("hoi")
+    loadgame()
