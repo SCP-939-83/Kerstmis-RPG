@@ -1,5 +1,7 @@
 import random
+import ModuleRandomINV
 # variables
+
 hpMonster = 20
 attacks = 0
 hpUser = 20
@@ -18,6 +20,7 @@ def option():
     print(hpUser, hpMonster , attacks)
     if hpMonster <= 1:
         print("You have won. You attacked", attacks, "times")
+        ModuleRandomINV.itemgen()
         pass
     elif hpUser <= 1:
         print("You have died")
