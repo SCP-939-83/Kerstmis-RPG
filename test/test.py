@@ -86,10 +86,8 @@ def playerfilecheck():
             
     
             
-
 if __name__ == "__main__":
     playerfilecheck()
     level += 1
     savegame()
     print("level = ", level)
-    
