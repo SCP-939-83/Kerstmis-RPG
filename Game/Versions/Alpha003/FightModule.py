@@ -2,24 +2,28 @@ import random
 import ModuleRandomINV
 # variables
 
-hpMonster = 20
+hpMonster = 3
 attacks = 0
 hpUser = 20
 maxAttackDamage = 10
 attackAmount = 0
 monsterHeal = 0
+karma = 0
 # fuctions
 
 #option to attack, heal or run
 def option():
-    global hpUser
-    global hpMonster
-    global attacks
-    global maxAttackDamage
-    global attackAmount
+    global hpUser , hpMonster , attacks , maxAttackDamage , attackAmount , monsterHeal , karma
     print(hpUser, hpMonster , attacks)
     if hpMonster <= 1:
         print("You have won. You attacked", attacks, "times")
+        karma += 1
+        print(karma)
+        hpMonster = 3
+        attacks = 0
+        maxAttackDamage = 10
+        attackAmount = 0
+        monsterHeal = 0
         ModuleRandomINV.itemgen()
         pass
     elif hpUser <= 1:
@@ -51,7 +55,7 @@ def option():
         else:
             print("You cannot do that")
             option()
-
+    return hpMonster , attacks , hpUser , maxAttackDamage , attackAmount , monsterHeal , karma
 
 def attackUser():
     global hpUser
@@ -78,19 +82,26 @@ def attackUser():
             print("You have attacked ", attackAmount, "times")
         else:
             print("You missed")
-            hpMonster = hpMonster + monsterHeal
+            if hpMonster <= 30:
+                hpMonster = hpMonster + monsterHeal
+            else: 
+                print("Opponent has ", hpMonster, "hp")
+                print("Opponent tried to heal but it is at max hp")
             print("Opponent healed ", monsterHeal, " hp. The opponenet has ", hpMonster, "hp")
     else :
-        print("You won")
-        exit()
+        print("The developer doesn't know how you got here but you won")
+        print("You attacked", attacks, "times")
+        print("You have won, i guess")
+        print(hpUser, hpMonster , attacks)
+        pass
 
 def monsterAttack():
     global hpMonster
     global hpUser
     global monsterHeal
-    monsterHeal = random.randint(4,10)
-    monsterAttackHeal = random.randint(1,6)
-    if monsterAttackHeal <= 3:
+    monsterHeal = random.randint(4,7)
+    monsterAttackHeal = random.randint(1,10)
+    if monsterAttackHeal <= 3 and hpMonster <= 30:
         print("Opponent healed ", monsterHeal, " hp. The opponenet has ", hpMonster, "hp")
     else:
         print("Opponent dealt ", monsterHeal, " damage. The opponent has ", hpMonster, "hp")

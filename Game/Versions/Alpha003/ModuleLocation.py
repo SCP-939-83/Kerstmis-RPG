@@ -16,8 +16,8 @@ def locationVillage():
     elif location == "stop":
         pass
     else:
-        print("Invalid input! Game closes!")
-        exit()
+        print("Invalid input!")
+        startGame()
 
 
 def locationForest():
@@ -34,8 +34,8 @@ def locationForest():
     elif location == "stop":
         pass
     else:
-        print("Invalid input! Game closes!")
-        exit()
+        print("Invalid input!")
+        startGame()
 
 
 def locationMountain():
@@ -51,8 +51,8 @@ def locationMountain():
     elif location == "stop":
         pass
     else:
-        print("Invalid input! Game closes!")
-        exit()
+        print("Invalid input!")
+        startGame()
 
 
 def startGame():
@@ -69,8 +69,8 @@ def startGame():
     elif location == "stop":
         pass
     else:
-        print("Invalid input! Game closes!")
-        exit()
+        print("Invalid input!")
+        startGame()
 
 
 if __name__ == "__main__":
