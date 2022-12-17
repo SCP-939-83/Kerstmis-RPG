@@ -11,11 +11,12 @@ my_dir = "Game\Versions\Alpha003"
 os.makedirs(my_dir, exist_ok=True)
 file_path = os.path.join(my_dir, "my_file.json")
 def inputuser():
-    global name, age, city, level, xp , my_dict , inventory , karma
-    name = input("What is your name? ")
+    global name, age, city, level, xp , my_dict , inventory , karma , savelevel
+    name = input("What is your player's name? ")
     age = input("What is your age? ")
-    city =  input("What is your city? ")
+    city =  input("What will you name your city? ")
     level = 1
+    savelevel = 1
     xp = 0
     karma = 0
     inventory = []
@@ -25,18 +26,19 @@ def inputuser():
     "age": age,
     "city": city,
     "level": level,
+    "savelevel" : savelevel,
     "xp": xp,
     "karma": karma,
     "inventory": inventory
 }
     savegame()
-    return name, age, city, level, xp, my_dict , inventory , karma
+    return name, age, city, level, xp, my_dict , inventory , karma, savelevel
 
 
 
 
 def savegame():
-    global name, age, city, level, xp , my_dict , inventory , karma
+    global name, age, city, level, xp , my_dict , inventory , karma , savelevel
     inventory = ModuleRandomINV.inventory + inventory
     karma = FightModule.karma + karma
     my_dict = {
@@ -44,6 +46,7 @@ def savegame():
     "age": age,
     "city": city,
     "level": level,
+    "savelevel" : savelevel,
     "xp": xp,
     "karma": karma,
     "inventory": inventory
@@ -62,7 +65,7 @@ def savegame():
 
 
 def loadgame():
-    global file_path , age , name , city , level , xp , inventory , karma
+    global file_path , age , name , city , level , xp , inventory , karma , savelevel
     my_dir = "Game\Versions\Alpha003"
 
     os.makedirs(my_dir, exist_ok=True)
@@ -78,10 +81,11 @@ def loadgame():
     name = data["name"]
     city = data["city"]
     level = data["level"]
+    savelevel = data["savelevel"]
     xp = data["xp"]
     karma = data["karma"]
     inventory = data["inventory"]
-    return age , name , city , level, xp ,inventory , karma
+    return age , name , city , level, xp ,inventory , karma , savelevel
 
 
 
@@ -92,12 +96,17 @@ def playerfilecheck():
             json_data = json.load(f)
             f.seek(0)
             json.dump(json_data, f)
-            print("File is not empty!")
+            print("You already have a player file! ")
+            print("Enjoy playing the game!")
+            
             loadgame()
             
             pass
         except ValueError:
-            print("Empty File!")
+            print("Empty player file detected! ")
+            print("Here, let me help you with that! ")
+            print("Please enter your player's information!")
+            print("-----------------------------")
             inputuser()
             
     

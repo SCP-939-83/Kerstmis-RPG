@@ -6,12 +6,13 @@ import FightModule
 
 gamesave.playerfilecheck()
 level = gamesave.level
+savelevel = gamesave.savelevel
 inventory = ModuleRandomINV.inventory
 gamesave.inventory = ModuleRandomINV.inventory + gamesave.inventory
 gamesave.karma = FightModule.karma + gamesave.karma
 karma = 0
 def main():
-    match level:
+    match savelevel:
         case 1:
             print("you entered the first level")
             time.sleep(0.75)
@@ -26,11 +27,6 @@ def main():
 
         case 2:
             print("You entered the second level")
-            gamesave.level += 1
-            print(gamesave.level, "level")
-            time.sleep(1)
-            gamesave.savegame()
-            gamesave.playerfilecheck()
 
             main()
         case 3:

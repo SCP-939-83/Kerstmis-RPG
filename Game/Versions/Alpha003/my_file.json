@@ -3,13 +3,11 @@
     "age": "18",
     "city": "Roermond",
     "level": 1,
+    "savelevel": 1,
     "xp": 0,
-    "karma": 6,
+    "karma": 2,
     "inventory": [
         "stick",
-        "stick",
-        "stick",
-        "rock",
         "rock"
     ]
 }
