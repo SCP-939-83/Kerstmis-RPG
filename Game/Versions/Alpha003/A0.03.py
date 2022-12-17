@@ -1,10 +1,11 @@
 import gamesave
 import time
 import ModuleLocation
-
+import ModuleRandomINV
 
 gamesave.playerfilecheck()
 level = gamesave.level
+inventory = ModuleRandomINV.inventory
 ik = 0
 def main():
     match level:
@@ -12,6 +13,11 @@ def main():
             print("you entered the first level")
             time.sleep(0.75)
             ModuleLocation.startGame()
+            print(ModuleRandomINV.inventory) 
+            print(inventory)
+            time.sleep(1)
+            print("You have", gamesave.level, "level")
+
         case 2:
             print("You entered the second level")
             gamesave.level += 1

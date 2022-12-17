@@ -37,7 +37,7 @@ def option():
         elif optionq == "run":
             input("Press enter to continue...")
             pass
-        elif optionq == "heal": # player heals itself with a random int between 3-6 and monster has a chance to attack or heal it self with random int, and if int is 1-3 it heals, if 4-10 it strikes back
+        elif optionq == "heal" and hpUser <= 30: # player heals itself with a random int between 3-6 and monster has a chance to attack or heal it self with random int, and if int is 1-3 it heals, if 4-10 it strikes back
             print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
             print("placeholder text for healing use item here")
             print("you have ", hpUser, "hp")
@@ -49,7 +49,7 @@ def option():
             option()
             return hpUser
         else:
-            print("Invalid option")
+            print("You cannot do that")
             option()
 
 
