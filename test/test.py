@@ -1,57 +1,49 @@
 import json
 import os
+
 my_dir = "Game\Versions\Alpha003"
 
 os.makedirs(my_dir, exist_ok=True)
 file_path = os.path.join(my_dir, "my_file.json")
+def inputuser():
+    global name, age, city, level, xp , my_dict
+    name = input("What is your name? ")
+    age = input("What is your age? ")
+    city =  input("What is your city? ")
+    level = 1
+    xp = 0
 
-class Person:
-    def __init__(self, name, age, city, level , xp):
-        self.name = name
-        self.age = age
-        self.city = city
-        self.level = level
-        self.xp = xp
-
-
-def playerfile():
-    global age , name , city , level , xp , data , file_path , my_dir
-    global my_dict , name , age , city , level , xp
-    Person.name = input("name:")
-    Person.age = int(input("age:"))
-    Person.city = input("city:")
-    Person.level = 1
-    Person.xp = 0
     my_dict = {
-        "name": Person.name,
-        "age": Person.age,
-        "city": Person.city,
-        "level" : Person.level,
-        "xp" : Person.xp,
-    }
-    return my_dict , Person.name , Person.age , Person.city , Person.level , Person.xp
+    "name": name,
+    "age": age,
+    "city": city,
+    "level": level,
+    "xp": xp,
+}
+    savegame()
+    return name, age, city, level, xp, my_dict
 
 
 
 
 def savegame():
-    global data , age , name , city , level , xp , data , file_path , my_dir, my_dict
-    my_dir = "Game\Versions\Alpha003"
-    print("game saved")
-
+    my_dict = {
+    "name": name,
+    "age": age,
+    "city": city,
+    "level": level,
+    "xp": xp,
+}
     os.makedirs(my_dir, exist_ok=True)
-
-    file_path = os.path.join(my_dict, "my_file.json")
-
+    file_path = os.path.join(my_dir, "my_file.json")
+    print("game saved")
     with open(file_path, "w") as f:
         json.dump(my_dict, f)
-
     with open("my_file.json", "r+") as f:
         data = json.load(f)
         f.seek(0)
-
         json.dump(data, f)
-    json_object = json.dumps(my_dict, indent = 4) 
+    json_object = json.dumps(my_dict, indent = 4)
     print(json_object)
 
 
@@ -66,17 +58,13 @@ def loadgame():
     with open(file_path, "r") as f:
         data = json.load(f)
 
-    print(data["age"])
+    print("game loaded")
     global age , name , city , level
     age = data["age"]
     name = data["name"]
     city = data["city"]
     level = data["level"]
     xp = data["xp"]
-    print(name, "= name")
-    print(age, "= age")
-    print(city, "= city")
-    print(level, "= level")
     return age , name , city , level , xp , data , file_path , my_dir
 
 
@@ -94,15 +82,14 @@ def playerfilecheck():
             pass
         except ValueError:
             print("Empty File!")
-            playerfile()
-            savegame()
+            inputuser()
             
     
             
 
 if __name__ == "__main__":
-    playerfilecheck ()
-    Person.level += 1
-    print(Person.level)
-    
+    playerfilecheck()
+    level += 1
     savegame()
+    print("level = ", level)
+    
