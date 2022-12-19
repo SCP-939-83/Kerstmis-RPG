@@ -14,14 +14,14 @@ karma = 0
 def main():
     match savelevel:
         case 1:
-            print("On a cold December morning, " , gamesave.name , '''wakes up and goes through their morning routine.
-It's Saturday, a week before Christmas, and ''' , gamesave.name, ''' looks at the Christmas tree in the distance.
-It's from the old hag across the neighborhood, and though most elderly people here love the decorative tree,
-it's old-fashioned and used up.
-''',gamesave.name, '''is thinking of becoming a Santa themselves, making the younger people happy since the elderly are lacking love for the younger.
-They go to the store and get food and toys for the younger kids. 
-            ''')
-
+            print("            On a cold December morning, " , gamesave.name , '''wakes up and goes through their morning routine.
+            It's Saturday, a week before Christmas, and ''' , gamesave.name, ''' looks at the Christmas tree in the distance.
+            It's from the old hag across the neighborhood, and though most elderly people here love the decorative tree,
+            it's old-fashioned and used up.
+            ''',gamesave.name, '''is thinking of becoming a Santa themselves, making the younger people happy since the elderly are lacking love for            the younger.
+            You go to the store and get food and toys for the younger kids. ''')
+            ModuleLocation.locationStore()
+            shoppingcheck()
         case 2:
             print("You entered the second level")
 
@@ -42,6 +42,13 @@ They go to the store and get food and toys for the younger kids.
             time.sleep(0.1)
             main()
             return ik
-            
+def shoppingcheck():
+    if ModuleLocation.shopping <=0 :
+        print("Maybe you should go back to the store. You didnt get anything yet")
+        ModuleLocation.locationStore()
+        shoppingcheck()
+    else: 
+        level += 1
+        pass
 main()
             

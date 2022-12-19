@@ -14,8 +14,6 @@ class Game:
 
 game = Game()
 game2 = Game()
-
-print(game.name)
 game.name = "Erik"
 print(game.name)
 game2.name = "Raymond"
