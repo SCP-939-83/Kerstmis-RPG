@@ -2,7 +2,7 @@ import FightModule
 import LevelupModule
 import ModuleLocation
 import ModuleRandomINV
-
+import turtle
 print("Welcome to the game")
 print("You are in a forest, you see a cave, a river and a house")
 

@@ -1,3 +1,58 @@
+import turtle
+
+# create a turtle object
+my_turtle = turtle.Turtle()
+
+# set the turtle's shape
+my_turtle.shape("turtle")
+
+# set the turtle's pen color
+my_turtle.pencolor("green")
+
+# set the turtle's speed
+my_turtle.speed(0)
+
+# move the turtle to the top of the screen
+my_turtle.penup()
+my_turtle.sety(200)
+my_turtle.pendown()
+
+# write the title of the menu
+my_turtle.write("Skill Menu", align="center", font=("Arial", 24, "bold"))
+
+# move the turtle down
+my_turtle.penup()
+my_turtle.sety(-100)
+my_turtle.pendown()
+
+# write the skills
+my_turtle.write("HP: 0", align="center", font=("Arial", 16))
+my_turtle.penup()
+my_turtle.sety(-125)
+my_turtle.pendown()
+my_turtle.write("Damage: 0", align="center", font=("Arial", 16))
+my_turtle.penup()
+my_turtle.sety(-150)
+my_turtle.pendown()
+my_turtle.write("Armor: 0", align="center", font=("Arial", 16))
+my_turtle.penup()
+my_turtle.sety(-175)
+my_turtle.pendown()
+my_turtle.write("Charisma: 0", align="center", font=("Arial", 16))
+my_turtle.penup()
+my_turtle.sety(-200)
+my_turtle.pendown()
+my_turtle.write("Intelligence: 0", align="center", font=("Arial", 16))
+
+# hide the turtle
+my_turtle.hideturtle()
+
+# keep the window open until the user closes it
+turtle.mainloop()
+
+
+
+
 level = 1
 xp = 200
 skill_points = 0
