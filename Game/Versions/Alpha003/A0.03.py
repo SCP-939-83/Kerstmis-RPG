@@ -18,10 +18,11 @@ def main():
             time.sleep(0.75)
             ModuleLocation.startGame()
             time.sleep(1)
-            
-            print("You have", gamesave.level, "level")
-            print("You have", gamesave.karma, "gamesave karma")
-            print("You have", FightModule.karma, "fight module karma")
+            for i in range(int(input())):
+                ModuleRandomINV.itemgen()
+            # print("You have", gamesave.level, "level")
+            # print("You have", gamesave.karma, "gamesave karma")
+            # print("You have", FightModule.karma, "fight module karma")
             print(karma, "karma")
             gamesave.savegame()
 
