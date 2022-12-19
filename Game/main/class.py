@@ -21,3 +21,8 @@ print(game2.name)
 print(game.name)
 game.doeIets("Cara")
 game2.doeIets("Max")
+steen = 1
+steen += 1
+game = Game()
+
+
