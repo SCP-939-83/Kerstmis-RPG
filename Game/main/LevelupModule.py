@@ -74,8 +74,7 @@ def spend_skill_point():
 
     print("You don't have enough skill points to spend.")
 
-level_up()
-spend_skill_point()
+
 
 total_hp = BASE_HP + HP_PER_LEVEL * skills["HP"]
 total_damage = BASE_DAMAGE + DAMAGE_PER_LEVEL * skills["Damage"]
@@ -88,3 +87,7 @@ print(f"Total Damage: {total_damage}")
 print(f"Total Armor: {total_armor}")
 print(f"Total Charisma: {total_charisma}")
 print(f"Total Intelligence: {total_intelligence}")
+
+if __name__ == "__main__":
+  level_up()
+  spend_skill_point()

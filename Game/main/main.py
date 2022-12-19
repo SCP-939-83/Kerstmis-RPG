@@ -1,21 +1,47 @@
-import FightModule
-import LevelupModule
+import gamesave
+import time
 import ModuleLocation
 import ModuleRandomINV
+import FightModule
 
-print("Welcome to the game")
-print("You are in a forest, you see a cave, a river and a house")
+gamesave.playerfilecheck()
+level = gamesave.level
+savelevel = gamesave.savelevel
+inventory = ModuleRandomINV.inventory
+gamesave.inventory = ModuleRandomINV.inventory + gamesave.inventory
+gamesave.karma = FightModule.karma + gamesave.karma
+karma = 0
+def main():
+    match savelevel:
+        case 1:
+            print("On a cold December morning, " , gamesave.name , '''wakes up and goes through their morning routine.
+It's Saturday, a week before Christmas, and ''' , gamesave.name, ''' looks at the Christmas tree in the distance.
+It's from the old hag across the neighborhood, and though most elderly people here love the decorative tree,
+it's old-fashioned and used up.
+''',gamesave.name, '''is thinking of becoming a Santa themselves, making the younger people happy since the elderly are lacking love for the younger.
+They go to the store and get food and toys for the younger kids. 
+            ''')
 
-ModuleLocation.startGame()
+        case 2:
+            print("You entered the second level")
 
-print("You have found a cave, do you want to go in?")
-if input("yes/no: ") == "yes":
-    print("You are in the cave")
-    print("You see a chest")
-    if input("Do you want to open it?") == "yes":
-        for i in range (3):
-            ModuleRandomINV.itemgen()
-            print("You have found " + str(i) + " items")
-            print("you encounter a monster") 
-            FightModule.option()
-input("Press enter to continue")
+            main()
+        case 3:
+            print("You entered the third level")
+            gamesave.level += 1
+            print(gamesave.level, "level")
+            time.sleep(1)
+            gamesave.savegame()
+            gamesave.playerfilecheck()
+        case _:
+            print("You are in an unknown level")
+            time.sleep(0.1)
+            global ik 
+            ik = ik + 1        
+            print(ik , "times")
+            time.sleep(0.1)
+            main()
+            return ik
+            
+main()
+            

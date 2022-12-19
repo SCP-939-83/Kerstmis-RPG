@@ -10,7 +10,7 @@ monsterHeal = 0
 monster_hp = 20
 max_damageplayer = 10
 min_damageplayer = 1
-
+karma = 0
 
 # fuctions
 
