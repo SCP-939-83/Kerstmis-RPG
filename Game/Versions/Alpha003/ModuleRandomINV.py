@@ -22,6 +22,9 @@ def itemgen():
         loot = ("\033[1;0m stick ")
         inventory.append("stick")
     print("\033[1;0m Je hebt een" + loot + "\033[1;0mitem gekregen!!")
+    y = len(inventory)
+    inventory.sort()
+    inventory.reverse()
     return inventory
 
 def inventoryshow():
