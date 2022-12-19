@@ -5,11 +5,13 @@ import os
 import FightModule
 import ModuleRandomINV
 
-
-my_dir = "Game\Versions\Alpha003"
+my_dir = "Game\main"
 
 os.makedirs(my_dir, exist_ok=True)
 file_path = os.path.join(my_dir, "my_file.json")
+
+
+
 def inputuser():
     global name, age, city, level, xp , my_dict , inventory , karma , savelevel
     name = input("What is your player's name? ")
@@ -66,7 +68,7 @@ def savegame():
 
 def loadgame():
     global file_path , age , name , city , level , xp , inventory , karma , savelevel
-    my_dir = "Game\Versions\Alpha003"
+    my_dir = "Game\main"
 
     os.makedirs(my_dir, exist_ok=True)
 
@@ -91,7 +93,7 @@ def loadgame():
 
 def playerfilecheck():
     
-    with open("Game\Versions\Alpha003\my_file.json", "r+") as f:
+    with open("Game\main\my_file.json", "r+") as f:
         try:
             json_data = json.load(f)
             f.seek(0)

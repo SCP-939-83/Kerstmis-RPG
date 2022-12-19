@@ -1,5 +1,9 @@
+# player is at village and has to go to the forest
+
 import FightModule
-import ModuleRandomINV
+import random
+import gamesave
+
 
 
 def locationVillage():
@@ -7,37 +11,17 @@ def locationVillage():
     print("You are at the village")
     print("You can go to the forest or the mountain")
     print("Which one do you choose?")
-    location = input("Type F for forest and M for mountain: ")
-    if location == "F":
-        locationForest()
-    elif location == "M":
-        locationMountain()
-    elif location == "stop":
-        pass
-    else:
-        print("Invalid input! Game closes!")
-        exit()
+
 
 
 def locationForest():
     global location
     print("You are in the forest")
     FightModule.option()
-    if input("item?") == "yes":
-        print("placeholder text for item use")
-        ModuleRandomINV.itemgen()
     print("You can go to the village or the mountain")
     print("Which one do you choose?")
     location = input("Type V for village and M for mountain: ")
-    if location == "V":
-        locationVillage()
-    elif location == "M":
-        locationMountain()
-    elif location == "stop":
-        pass
-    else:
-        print("Invalid input! Game closes!")
-        exit()
+
 
 
 def locationMountain():
@@ -46,36 +30,42 @@ def locationMountain():
     print("You can go to the village or the forest")
     print("Which one do you choose?")
     location = input("Type V for village and F for forest: ")
-    if location == "V":
-        locationVillage()
-    elif location == "F":
-        locationForest()
-    elif location == "stop":
-        pass
-    else:
-        print("Invalid input! Game closes!")
-        exit()
 
 
 def startGame():
     global location
     print("Hello player, welcome to the game!")
-    location = input(
-        "Do you want to go to the village, forest or mountain? (V/F/M): ")
-    if location == "V":
-        locationVillage()
-    elif location == "F":
-        locationForest()
-    elif location == "M":
-        locationMountain()
-    elif location == "stop":
+    print('''You are able to travel to the next locations.
+     - forest
+     - village
+     - mountain
+     - store 
+    ''')
+    location = input("Where would you like to travel to? ")
+
+    location.lower()
+    match location:
+            case "forest":
+                locationForest()
+            case "village":
+                locationVillage()
+            case "mountain":
+                locationMountain()
+            case "store":
+                locationStore()
+            case _:
+                print("This is not an input.")
+
+
+
+def locationStore():
+    # print("You walked into the store.")
+    scene = random.randint(1,500)
+    if scene <= 10:
+        print("The store is closed, come back later.")
         pass
-    else:
-        print("Invalid input! Game closes!")
-        exit()
+    elif scene >=11 and scene <= 500:
+        print("two blokes are talking and standing in the way. ")
 
 
-if __name__ == "__main__":
-    startGame()
-    print(location)
-    input("Press enter to continue...")
+startGame()
