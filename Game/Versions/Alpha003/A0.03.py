@@ -23,7 +23,12 @@ def main():
             # print("You have", gamesave.level, "level")
             # print("You have", gamesave.karma, "gamesave karma")
             # print("You have", FightModule.karma, "fight module karma")
+            y = len(inventory)
+            print(y, "items in your inventory")
+            inventory.sort()
+            inventory.reverse()
             print(karma, "karma")
+            print(inventory)
             gamesave.savegame()
 
         case 2:
