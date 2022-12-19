@@ -112,5 +112,3 @@ def locationStore():
         time.sleep(1)
         print("You felt silly for walking into that wall.")
         locationStore()
-if __name__ == "__main__":
-    locationStore()
