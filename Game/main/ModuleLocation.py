@@ -9,6 +9,17 @@ shopping = 0
 
 def locationVillage():
     global location
+    scene = random.randint(1,601)
+    if scene <= 10:
+      print(3)
+    elif scene >=11 and scene <= 100:
+       print(3)
+    elif scene >=101 and scene <= 500:
+       print(3)
+    elif scene >=501 and scene <=600:
+        print(3)
+    else:
+        print(3)
     print("You are at the village")
     print("You can go to the forest or the mountain")
     print("Which one do you choose?")
@@ -18,8 +29,17 @@ def locationVillage():
 
 def locationForest():
     global location
-    print("You are in the forest")
-    FightModule.option()
+    scene = random.randint(1,601)
+    if scene <= 10:
+      print(3)
+    elif scene >=11 and scene <= 100:
+       print(3)
+    elif scene >=101 and scene <= 500:
+       print(3)
+    elif scene >=501 and scene <=600:
+        print(3)
+    else:
+        print(3)
     print("You can go to the village or the mountain")
     print("Which one do you choose?")
     startGame()
@@ -28,9 +48,17 @@ def locationForest():
 
 def locationMountain():
     global location
-    print("You are in the mountain")
-    print("You can go to the village or the forest")
-    print("Which one do you choose?")
+    scene = random.randint(1,601)
+    if scene <= 10:
+      print(3)
+    elif scene >=11 and scene <= 100:
+       print(3)
+    elif scene >=101 and scene <= 500:
+       print(3)
+    elif scene >=501 and scene <=600:
+        print(3)
+    else:
+        print(3)
     startGame()
 
 
@@ -87,14 +115,14 @@ def locationStore():
         shopping += 1
         print("You decided to travel somewhere")
         startGame()
-    elif scene >=101 and scene <= 300:
+    elif scene >=101 and scene <= 500:
         print("You went inside and got everything you needed.")
         shopping += 1 
         print(shopping)
         print("You decided to travel somewhere")
         startGame()
         return shopping
-    elif scene >=301 and scene <=600:
+    elif scene >=501 and scene <=600:
         time.sleep(2)
         print("It's a beautiful day outside")
         time.sleep(0.8)
@@ -106,9 +134,11 @@ def locationStore():
         time.sleep(1.4)
         print("Should go outside and get a SANSational gasp of fresh air")
         print("You decided to travel somewhere")
+        startGame()
     else:
         time.sleep(2)
         print("Oh no, You stared at a wall.")
         time.sleep(1)
         print("You felt silly for walking into that wall.")
         locationStore()
+startGame()
