@@ -27,7 +27,7 @@ def monster_stats(player_level):
   min_damage = random.randint(3,6) * player_level
   max_damage = random.randint(6,9) * player_level + (5)
   return monster_hp, min_damage, max_damage
-monster_stats(10)
+monster_stats()
 print("Monster HP:", monster_hp)
 print("Monster Damage Range:", min_damage, "to", max_damage)
 def option():
