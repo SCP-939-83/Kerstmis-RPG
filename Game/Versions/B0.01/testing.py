@@ -28,7 +28,7 @@ my_turtle.pendown()
 # write the skills
 level = 1337
 turtle.title(level)
-my_turtle.write("HP: 0", align="center", font=("Arial", 16))
+my_turtle.write("HP: ", align="center", font=("Arial", 16))
 my_turtle.penup()
 my_turtle.sety(-125)
 my_turtle.pendown()
