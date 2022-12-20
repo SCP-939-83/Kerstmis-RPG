@@ -26,6 +26,7 @@ def main():
         case 2:
             print("You entered the second level")
             time.sleep(10)
+            
 
             main()
         case 3:
