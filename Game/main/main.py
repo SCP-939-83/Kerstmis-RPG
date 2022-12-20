@@ -22,8 +22,11 @@ def main():
             You go to the store and get food and toys for the younger kids. ''')
             ModuleLocation.locationStore()
             shoppingcheck()
+            main()
         case 2:
             print("You entered the second level")
+            time.sleep(10)
+            
 
             main()
         case 3:
@@ -43,12 +46,19 @@ def main():
             main()
             return ik
 def shoppingcheck():
+    global savelevel
     if ModuleLocation.shopping <=0 :
         print("Maybe you should go back to the store. You didnt get anything yet")
+        time.sleep(1.3)
         ModuleLocation.locationStore()
         shoppingcheck()
+    elif ModuleLocation.shopping >=1 :
+        print("You passed on to home...")
+        savelevel += 1
+        main()
     else: 
-        level += 1
+        savelevel += 1
         pass
+    return level
 main()
             
