@@ -32,23 +32,16 @@ the moment you are coming home, they hear a honking car and a big bang. They loo
             print('''
             The homeless person runs away, The old hag is hurt
             
-            
-            
-            
-            
-            
              ''')
             time.sleep(10)
-            
-
+            print("The old hag is recovering in her home...")
+            gamesave.savelevel == 3
             main()
         case 3:
-            print("You entered the third level")
-            gamesave.level += 1
-            print(gamesave.level, "level")
-            time.sleep(1)
+            print("You decided to visit the old hag across the neighborhood.")
+            ModuleLocation.locationHag()
+            gamesave.savelevel += 1
             gamesave.savegame()
-            gamesave.playerfilecheck()
         case _:
             print("You are in an unknown level")
             time.sleep(0.1)

@@ -164,3 +164,24 @@ def locationStore():
         print("You felt silly for walking into that wall.")
         locationStore()
 
+def locationHag():
+        conversation = input("Do you want to talk to the old hag? (yes/no) ")
+        if conversation == "yes":
+            print("You approach the old hag and start a conversation.")
+            print("Old hag: Hello there, young one. What brings you to my humble abode?")
+            response = input("What do you say? ")
+            print("You: " + response)
+            print("Old hag: Ah, I see. Well, I was just about to make myself a cup of tea. Would you be so kind as to help an old hag like me?")
+            help_decision = input("Do you help the old hag make a cup of tea? (yes/no) ")
+            if help_decision == "yes":
+                print("You decide to help the old hag make a cup of tea.")
+                print("Old hag: Thank you so much, dear. It's not easy for an old hag like me to do everything on my own. Here, have a cup of tea with me.")
+                print("You sit down and enjoy a cup of tea with the old hag. She tells you stories of her younger days and you both have a nice chat.")
+            else:
+                print("You decide not to help the old hag make a cup of tea.")
+                gamesave.karma += 10
+                print("Old hag: Ah, well never mind then. It was nice talking to you. Take care now.")
+                print("A few days pass and you hear that the old hag has passed away from severe injuries.")
+                print("The villagers decide to bury her next to her favorite tree as a final resting place.")
+        else:
+            print("You decide not to talk to the old hag and leave the location.")
