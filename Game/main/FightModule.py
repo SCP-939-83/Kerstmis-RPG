@@ -11,7 +11,7 @@ monster_hp = 20
 max_damageplayer = 10
 min_damageplayer = 1
 karma = 0
-
+battle_result = "lose"
 # fuctions
 
 #option to attack, heal or run
@@ -27,7 +27,7 @@ def monster_stats(player_level):
   min_damage = random.randint(3,6) * player_level
   max_damage = random.randint(6,9) * player_level + (5)
   return monster_hp, min_damage, max_damage
-monster_stats()
+monster_stats(10)
 print("Monster HP:", monster_hp)
 print("Monster Damage Range:", min_damage, "to", max_damage)
 def option():
@@ -117,7 +117,11 @@ def monsterAttack():
         print("you have ", hpUser, "hp")
     return monsterHeal, monsterAttackHeal, damage_monster
 
-
+def Endbattle():
+    global battle_result
+    print("COpy fIghT module to here")
+    battle_result = input("Did you win or lose?")
+    return battle_result
 if __name__ == "__main__":
     option()
 
