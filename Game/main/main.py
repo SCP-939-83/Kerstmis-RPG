@@ -24,7 +24,20 @@ def main():
             shoppingcheck()
             main()
         case 2:
-            print("You entered the second level")
+            print("You decided to go home")
+            print("\x1B[3m" + '''
+the moment you are coming home, they hear a honking car and a big bang. They look out the window and see two cars have crashed into each other - one car and a tanker. The tanker is leaking an unknown fluid and the car driver is dead. There doesn't seem to be anyone in the tanker, but there is an unknown bystander - a homeless person with a Christmas hat. The mess is cleaned up and the body is buried near the tree as a memorial to the incident. It was the old hag, who no one appreciated. 
+            '''+ "\x1B[0m")
+            print("You are able to make your own twist to this story.")
+            print('''
+            The homeless person runs away, The old hag is hurt
+            
+            
+            
+            
+            
+            
+             ''')
             time.sleep(10)
             
 
