@@ -84,19 +84,41 @@ the moment you are coming home, they hear a honking car and a big bang. They loo
                 if helpVillagers == "yes":
                     main()
                 else:
-                    gamesave.savegame == 5
+                    gamesave.savelevel == 5
             gamesave.savegame()
             main()
-
+        case 5:
+            print("You decide not to help anyone in the village and instead go after the homeless person you chased earlier.")
+            print("After a long chase, you lose the homeless person and end up near the old hag's house.")
+            print("Exhausted and hurt, you decide to rest at the old hag's house.")
+            sleep_decision = input("Do you want to sleep? (yes/no) ")
+            if sleep_decision == "yes":
+                print("You decide to sleep and fall into a deep slumber.")
+                print("Suddenly, you hear a weird noise and wake up to find the homeless person standing over you with a knife.")
+                print("You try to call for help, but realize that you have no cellular data available.")
+                print("You fight the homeless person, but are severely injured in the process.")
+                FightModule.Endbattle()
+                if FightModule.battle_result == "win":
+                    
+                    print("You manage to survive the fight, but are left with severe injuries.")
+                    gamesave.savelevel == 7
+                    gamesave.savegame()
+                    main()
+                else:
+                    exit()
+            else: 
+                print("8")
+                gamesave.savelevel = 8
+                print(gamesave.savelevel)
+                gamesave.savegame()
+                main()
         case _:
             print("You are in an unknown level")
-            time.sleep(0.1)
-            global ik
-            ik = ik + 1
-            print(ik, "times")
-            time.sleep(0.1)
+            for i in range(5):
+                time.sleep(1)
+                print("ZZzzz....")
+            time.sleep(1)
             main()
-            return ik
 
 
 def shoppingcheck():
