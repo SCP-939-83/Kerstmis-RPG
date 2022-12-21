@@ -52,9 +52,11 @@ the moment you are coming home, they hear a honking car and a big bang. They loo
             The homeless person runs away, The old hag is hurt
             
              ''')
-            time.sleep(10)
+            time.sleep(3)
             print("The old hag is recovering in her home...")
-            gamesave.savelevel == 3
+            gamesave.savelevel = 3
+            gamesave.savegame()
+            
             main()
         case 3:
             print("You decided to visit the old hag across the neighborhood.")
@@ -182,4 +184,5 @@ the moment you are coming home, they hear a honking car and a big bang. They loo
             else: 
                 print("Maybe later...")
             main()
-main()
+if __name__ == "__main__":
+    main()

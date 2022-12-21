@@ -79,7 +79,8 @@ def locationMountain():
         print("You found an item!")
         ModuleRandomINV.itemgen()
     elif scene >= 501 and scene <= 600:
-        print(3)
+        for i in range(3):
+            ModuleRandomINV.itemgen()
     else:
         print(3)
     startGame()
@@ -188,3 +189,4 @@ def locationHag():
                 print("The villagers decide to bury her next to her favorite tree as a final resting place.")
         else:
             print("You decide not to talk to the old hag and leave the location.")
+            pass
