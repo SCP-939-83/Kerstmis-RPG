@@ -93,6 +93,15 @@ def startGame():
      - village
      - mountain
      - store 
+Here is a map of your area.
+Note you cannot travel to some of those locations!
+     Big tree - Village
+         |         |
+    Home - Place of Delict -  Store
+       |   |
+       | Mountain
+       |   |
+      Forest
     ''')
     location = input("Where would you like to travel to? ")
     location = location.lower()

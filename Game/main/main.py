@@ -65,7 +65,6 @@ the moment you are coming home, they hear a honking car and a big bang. They loo
             gamesave.savegame()
         case 4:
             print("You decide to spend the day helping out in the village.")
-            ModuleLocation.locationVillage()
             global tasks_completed
             while tasks_completed < 5:
                 print(
@@ -92,10 +91,16 @@ the moment you are coming home, they hear a honking car and a big bang. They loo
                     tasks_completed += 1
                 else:
                     print("Invalid choice. Please choose a valid task to help with.")
+            else: 
+                gamesave.savelevel = 6
+                gamesave.savegame()
+                main()
             print("You have completed all three tasks and learned more about the history of the village and the tree. It was a fulfilling day spent helping out and learning new things.")
             if tasks_completed > 5:
                 gamesave.savelevel = 6
-                gamesave.savegame
+                gamesave.savegame()
+                time.sleep(3)
+                main()
             elif tasks_completed > 2 and tasks_completed < 5:
                 print("You helped some villagers, but not enough. Would you like to help more villagers?")
                 helpVillagers = input("Yes / No")
@@ -104,6 +109,8 @@ the moment you are coming home, they hear a honking car and a big bang. They loo
                     main()
                 else:
                     gamesave.savelevel = 5
+                    gamesave.savegame
+                    main()
             gamesave.savegame()
             main()
         case 5:
