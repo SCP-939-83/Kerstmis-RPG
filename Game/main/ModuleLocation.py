@@ -102,7 +102,9 @@ def startGame():
      - forest
      - village
      - mountain
-     - store ''')
+     - store
+     - stop
+      ''')
     time.sleep(1)
     print('''Here is a map of your area.
 Note you cannot travel to some of those locations!

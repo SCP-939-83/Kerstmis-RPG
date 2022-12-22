@@ -101,16 +101,18 @@ def attackUser():
     else :
         print("You won")
         exit()
+
+
+Hpuser = 100
+playermax_damage = 10
+playermin_damage = 5
+playerminheal = 4
+playermaxheal = 8
+hpdrunk = 200
+drunkmax_damage = 7
+drunkmin_damage = 1
 def drunk():
     global Hpuser, hpdrunk, drunkmax_damage, drunkmin_damage, playermax_damage, playermin_damage, playermaxheal, playerminheal 
-    Hpuser = 100
-    playermax_damage = 10
-    playermin_damage = 5
-    playerminheal = 4
-    playermaxheal = 8
-    hpdrunk = 200
-    drunkmax_damage = 7
-    drunkmin_damage = 1
     print("You have ", Hpuser, "hp")
     print("The drunk has ", hpdrunk, "hp")
     time.sleep(1)
@@ -143,6 +145,7 @@ def drunk():
     if hpdrunk <=1:
         print("You won")
         exit()
+    return Hpuser, hpdrunk, drunkmax_damage, drunkmin_damage, playermax_damage, playermin_damage, playermaxheal, playerminheal 
     
 def monsterAttack():
     global hpMonster
