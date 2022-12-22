@@ -1,4 +1,5 @@
 import random
+import time
 import LevelupModule
 # variables
 hpMonster = 20
@@ -100,22 +101,48 @@ def attackUser():
     else :
         print("You won")
         exit()
+def drunk():
+    hpUser = 100
+    max_damageplayer = 10
+    min_damageplayer = 5
+    minheal = 3
+    maxheal = 5
+    hpdrunk = 200
+    drunkmax_damage = 7
+    drunkmin_damage = 1
 
+
+    healplayer = random.randint(minheal, maxheal)
+    print("You have ", hpUser, "hp")
+    print("The drunk has ", hpdrunk, "hp")
+    time.sleep(1)
+    if hpUser >= 1:
+        drunkdamage = random.randint(drunkmin_damage, drunkmax_damage)
+        hpUser = hpUser - drunkdamage
+        print("You got hurt, opponent dealt" , drunkdamage, "damage")
+        pass
+    else:
+        print("You died")
+        exit()
+    if hpdrunk <=1:
+        print("You won")
+        exit()
+    
 def monsterAttack():
     global hpMonster
     global hpUser
     global monsterHeal
     monsterHeal = random.randint(4,10)
-    monsterAttackHeal = random.randint(1,6)
+    monsterchoice = random.randint(1,2)
     damage_monster = random.randint(min_damage, max_damage)
-    if monsterAttackHeal <= 3:
+    if monsterchoice == 1:
         print("Opponent healed ", monsterHeal, " hp. The opponenet has ", monster_hp, "hp")
     else:
         print("Opponent dealt ", damage_monster, " damage. The opponent has ", monster_hp, "hp")
         hpUser = hpUser - damage_monster
         print("You got hurt, opponent dealt some damage")
         print("you have ", hpUser, "hp")
-    return monsterHeal, monsterAttackHeal, damage_monster
+    return monsterHeal, monsterchoice, damage_monster
 
 def Endbattle():
     global battle_result
