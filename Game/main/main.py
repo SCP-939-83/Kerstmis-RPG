@@ -67,8 +67,9 @@ the moment you are coming home, they hear a honking car and a big bang. They loo
             print("You decided to visit the old hag across the neighborhood.")
             time.sleep(2)
             ModuleLocation.locationHag()
-            gamesave.savelevel += 1
+            gamesave.savelevel = 4
             gamesave.savegame()
+            main()
         case 4:
             print("You decide to spend the day helping out in the village.")
             time.sleep(2)
@@ -166,6 +167,8 @@ the moment you are coming home, they hear a honking car and a big bang. They loo
             print("It's the end of the holiday season and you feel a sense of accomplishment and joy from being able to bring happiness to those around you.")
             time.sleep(1)
             print("Thank you for playing! The game has now ended.")
+            time.sleep(5)
+            exit()
         case 7:
             print("You are severely injured and unable to fight back against the homeless person.")
             time.sleep(1)
@@ -176,6 +179,8 @@ the moment you are coming home, they hear a honking car and a big bang. They loo
             print("You die, but your bravery and selflessness have saved the village from further harm.")
             time.sleep(1)
             print("Thank you for playing. The game has now ended.")
+            time.sleep(7)
+            exit()
         case 8:
             print("You have become consumed by evil and decide to turn against the villagers.")
             for i in range(17):
@@ -209,6 +214,8 @@ the moment you are coming home, they hear a honking car and a big bang. They loo
                 print("However, your actions have not gone unnoticed and you are eventually brought to justice for your crimes.")
                 time.sleep(1)
                 print("Thank you for playing. The game has now ended.")
+            time.sleep(10)
+            exit()
 
         case _:
             print("You are in an unknown level")
