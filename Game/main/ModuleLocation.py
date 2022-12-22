@@ -58,7 +58,7 @@ def locationForest():
         startGame()
     elif scene >= 501 and scene <= 600:
         print("Drunk person is attacking you!")
-        FightModule.drunk()        
+        FightModule.drunk() 
         time.sleep(1.76)
         startGame()
     else:
