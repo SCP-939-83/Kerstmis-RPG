@@ -102,20 +102,21 @@ def attackUser():
         print("You won")
         exit()
 def drunk():
-    hpUser = 100
-    max_damageplayer = 10
-    min_damageplayer = 5
-    minheal = 4
-    maxheal = 8
+    global Hpuser, hpdrunk, drunkmax_damage, drunkmin_damage, playermax_damage, playermin_damage, playermaxheal, playerminheal 
+    Hpuser = 100
+    playermax_damage = 10
+    playermin_damage = 5
+    playerminheal = 4
+    playermaxheal = 8
     hpdrunk = 200
     drunkmax_damage = 7
     drunkmin_damage = 1
-    print("You have ", hpUser, "hp")
+    print("You have ", Hpuser, "hp")
     print("The drunk has ", hpdrunk, "hp")
     time.sleep(1)
-    if hpUser >= 1:
+    if Hpuser >= 1:
         drunkdamage = random.randint(drunkmin_damage, drunkmax_damage)
-        hpUser = hpUser - drunkdamage
+        Hpuser = Hpuser - drunkdamage
         print("You got hurt, opponent dealt" , drunkdamage, "damage")
         choice = input("do you want to attack or heal?")
         if choice == "attack":
@@ -123,12 +124,15 @@ def drunk():
             hpdrunk = hpdrunk - playerdamage
             print("You dealt ", playerdamage, "damage")
             print("Opponent has ", hpdrunk, "hp")
-            return hpdrunk
+            drunk()
+            return hpdrunk, hpUser
         elif choice == "heal":
-            playerheal = random.randint(minheal, maxheal)
-            hpUser = hpUser + playerheal
-            print("You have healed up to ", hpUser, "hp")
-            return hpUser
+            playerheal = random.randint(playerminheal, playermaxheal)
+            Hpuser = Hpuser + playerheal
+            print("You have healed up to ", Hpuser, "hp")
+            drunk()
+            return Hpuser, hpdrunk
+            
         else:
             print("Invalid option")
             drunk()
